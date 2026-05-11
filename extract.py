@@ -3,6 +3,7 @@ from requests import post, get
 from datetime import datetime
 from os import getenv
 from os.path import basename
+from json import load
 
 
 NOTION_TOKEN = getenv("NOTION_TOKEN")
@@ -32,6 +33,22 @@ def create_notion_entry(filename, description, date=datetime.now().isoformat()):
     return response.status_code, response.text
 
 
+def get_first_markdown_content(file_path):
+    """Liest die erste Markdown-Zelle aus einem Jupyter Notebook."""
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            nb_data = load(f)
+
+        for cell in nb_data.get("cells", []):
+            if cell.get("cell_type") == "markdown":
+                content = "".join(cell.get("source", []))
+                return content[:1000] if content else "Keine Beschreibung gefunden."
+    except Exception as e:
+        print(f"Fehler beim Parsen von {file_path}: {e}")
+
+    return "Notebook ohne Markdown-Beschreibung."
+
+
 if __name__ == "__main__":
 
     new_files = getenv("NEW_FILES", "").split()
@@ -41,10 +58,11 @@ if __name__ == "__main__":
     for file_path in new_files:
         if file_path.startswith("notebooks/") and file_path.endswith(".ipynb"):
             filename = basename(file_path)
-            print(filename)
+            description = get_first_markdown_content(file_path)
+
             status, text = create_notion_entry(
                 filename=filename,
-                description="Experiment File"
+                description=description
             )
             print(f"Datei {filename} verarbeitet. Status: {status}")
             print(f"Response: {text}")
