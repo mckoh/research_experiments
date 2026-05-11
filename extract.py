@@ -29,7 +29,7 @@ def create_notion_entry(filename, description, date=datetime.now().isoformat()):
     }
 
     response = post(create_url, headers=headers, json=payload)
-    return response.status_code
+    return response.status_code, response.text
 
 
 if __name__ == "__main__":
@@ -42,9 +42,10 @@ if __name__ == "__main__":
         if file_path.startswith("notebooks/") and file_path.endswith(".ipynb"):
             filename = basename(file_path)
             print(filename)
-            status = create_notion_entry(
+            status, text = create_notion_entry(
                 filename=filename,
                 description="Experiment File"
             )
             print(f"Datei {filename} verarbeitet. Status: {status}")
+            print(f"Response: {text}")
 # %%
