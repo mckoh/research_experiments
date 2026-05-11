@@ -36,6 +36,8 @@ if __name__ == "__main__":
 
     new_files = getenv("NEW_FILES", "").split()
 
+    print(new_files)
+
     for file_path in new_files:
         if file_path.startswith("notebooks/") and file_path.endswith(".ipynb"):
             filename = basename(file_path)
