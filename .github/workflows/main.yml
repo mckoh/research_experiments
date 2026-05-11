@@ -1,0 +1,37 @@
+name: Sync New Notebooks to Notion
+
+on:
+  push:
+    paths:
+      - 'Notebooks/**' # Trigger nur bei Änderungen in diesem Ordner
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # Wichtig, um Unterschiede zum vorherigen Commit zu sehen
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: pip install -r requirements
+
+      - name: Get New Files
+        id: get_files
+        run: |
+          # Listet nur die neu hinzugefügten (A) Dateien im letzten Commit auf
+          FILES=$(git diff --name-only --diff-filter=A HEAD^ HEAD | tr '\n' ' ')
+          echo "NEW_FILES=$FILES" >> $GITHUB_ENV
+
+      - name: Run Notion Sync
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          NEW_FILES: ${{ env.NEW_FILES }}
+        run: python extract.py
