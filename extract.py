@@ -15,12 +15,13 @@ headers = {
     "Notion-Version": "2022-06-28"
 }
 
-def create_notion_entry(filename, description, date=datetime.now().isoformat()):
+def create_notion_entry(filename, description, url, date=datetime.now().isoformat()):
     create_url = "https://api.notion.com/v1/pages"
 
     data = {
         "Filename": {"title": [{"text": {"content": filename}}]},
         "Description": {"rich_text": [{"text": {"content": description}}]},
+        "Github URL": {"url": url},
         "Last modified": {"date": {"start": date}}
     }
 
@@ -59,10 +60,11 @@ if __name__ == "__main__":
         if file_path.startswith("notebooks/") and file_path.endswith(".ipynb"):
             filename = basename(file_path)
             description = get_first_markdown_content(file_path)
-
+            url = f"https://github.com/mckoh/research_experiments/blob/main/{file_path}"
             status, text = create_notion_entry(
                 filename=filename,
-                description=description
+                description=description,
+                url=url
             )
             print(f"Datei {filename} verarbeitet. Status: {status}")
             print(f"Response: {text}")
