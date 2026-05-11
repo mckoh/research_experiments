@@ -33,6 +33,6 @@ jobs:
       - name: Run Notion Sync
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_DATABASE_ID: ${{ secrets.DATABASE_ID }}
+          DATABASE_ID: ${{ secrets.DATABASE_ID }}
           NEW_FILES: ${{ env.NEW_FILES }}
         run: python extract.py
