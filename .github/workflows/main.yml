@@ -20,7 +20,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install Dependencies
-        run: pip install -r requirements
+        run: pip install requests
 
       - name: Get New Files
         id: get_files
