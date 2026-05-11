@@ -3,7 +3,7 @@ name: Sync New Notebooks to Notion
 on:
   push:
     paths:
-      - 'Notebooks/**' # Trigger nur bei Änderungen in diesem Ordner
+      - 'notebooks/**' # Trigger nur bei Änderungen in diesem Ordner
 
 jobs:
   sync:
