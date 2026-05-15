@@ -1,0 +1,14 @@
+[
+  {"machine_id":"LH-A-042","ts_utc":"2026-05-14T07:15:02Z","event_id":"e0001","group":"Powertrain","code":"PT_1001","severity":"info","priority":4,"text":"Ignition ON","value":null,"unit":null,"source":"ECU"},
+  {"machine_id":"LH-A-042","ts_utc":"2026-05-14T07:15:06Z","event_id":"e0002","group":"Powertrain","code":"PT_1100","severity":"info","priority":4,"text":"Engine start requested","value":null,"unit":null,"source":"ECU"},
+  {"machine_id":"LH-A-042","ts_utc":"2026-05-14T07:15:08Z","event_id":"e0003","group":"Powertrain","code":"PT_1101","severity":"info","priority":4,"text":"Engine running","value":null,"unit":null,"source":"ECU"},
+  {"machine_id":"LH-A-042","ts_utc":"2026-05-14T07:17:19Z","event_id":"e0004","group":"Hydraulic","code":"HY_2003","severity":"warning","priority":3,"text":"Hydraulic oil temperature high","value":92.4,"unit":"C","source":"ECU"},
+  {"machine_id":"LH-A-042","ts_utc":"2026-05-14T07:17:45Z","event_id":"e0005","group":"Hydraulic","code":"HY_2004","severity":"warning","priority":3,"text":"Hydraulic pressure oscillation detected","value":18.2,"unit":"bar_pp","source":"ECU"},
+  {"machine_id":"LH-A-042","ts_utc":"2026-05-14T07:18:03Z","event_id":"e0006","group":"Sensor","code":"SN_3102","severity":"error","priority":2,"text":"Temperature sensor implausible","value":null,"unit":null,"source":"ECU"},
+  {"machine_id":"LH-A-042","ts_utc":"2026-05-14T07:18:05Z","event_id":"e0007","group":"Hydraulic","code":"HY_2100","severity":"error","priority":2,"text":"Hydraulic derate active","value":0.70,"unit":"limit_factor","source":"ECU"},
+  {"machine_id":"LH-A-042","ts_utc":"2026-05-14T07:18:18Z","event_id":"e0008","group":"Connectivity","code":"CN_4001","severity":"warning","priority":3,"text":"Telematics buffer nearing capacity","value":0.88,"unit":"ratio","source":"Gateway"},
+  {"machine_id":"LH-A-042","ts_utc":"2026-05-14T07:19:01Z","event_id":"e0009","group":"Powertrain","code":"PT_1205","severity":"info","priority":4,"text":"Idle speed stabilized","value":790,"unit":"rpm","source":"ECU"},
+  {"machine_id":"LH-A-042","ts_utc":"2026-05-14T07:20:12Z","event_id":"e0010","group":"Hydraulic","code":"HY_2003","severity":"info","priority":4,"text":"Hydraulic oil temperature back to normal","value":78.6,"unit":"C","source":"ECU"},
+  {"machine_id":"LH-A-042","ts_utc":"2026-05-14T07:21:40Z","event_id":"e0011","group":"Sensor","code":"SN_3102","severity":"info","priority":4,"text":"Temperature sensor plausible again","value":null,"unit":null,"source":"ECU"},
+  {"machine_id":"LH-A-042","ts_utc":"2026-05-14T07:45:10Z","event_id":"e0012","group":"Powertrain","code":"PT_1002","severity":"info","priority":4,"text":"Ignition OFF","value":null,"unit":null,"source":"ECU"}
+]
