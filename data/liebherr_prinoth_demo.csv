@@ -1,0 +1,13 @@
+machine_id,ts_utc,event_id,group,code,severity,priority,text,value,unit,source
+LH-A-042,2026-05-14T07:15:02Z,e0001,Powertrain,PT_1001,info,4,Ignition ON,,,ECU
+LH-A-042,2026-05-14T07:15:06Z,e0002,Powertrain,PT_1100,info,4,Engine start requested,,,ECU
+LH-A-042,2026-05-14T07:15:08Z,e0003,Powertrain,PT_1101,info,4,Engine running,,,ECU
+LH-A-042,2026-05-14T07:17:19Z,e0004,Hydraulic,HY_2003,warning,3,Hydraulic oil temperature high,92.4,C,ECU
+LH-A-042,2026-05-14T07:17:45Z,e0005,Hydraulic,HY_2004,warning,3,Hydraulic pressure oscillation detected,18.2,bar_pp,ECU
+LH-A-042,2026-05-14T07:18:03Z,e0006,Sensor,SN_3102,error,2,Temperature sensor implausible,,,ECU
+LH-A-042,2026-05-14T07:18:05Z,e0007,Hydraulic,HY_2100,error,2,Hydraulic derate active,0.7000000000000001,limit_factor,ECU
+LH-A-042,2026-05-14T07:18:18Z,e0008,Connectivity,CN_4001,warning,3,Telematics buffer nearing capacity,0.88,ratio,Gateway
+LH-A-042,2026-05-14T07:19:01Z,e0009,Powertrain,PT_1205,info,4,Idle speed stabilized,790.0,rpm,ECU
+LH-A-042,2026-05-14T07:20:12Z,e0010,Hydraulic,HY_2003,info,4,Hydraulic oil temperature back to normal,78.6,C,ECU
+LH-A-042,2026-05-14T07:21:40Z,e0011,Sensor,SN_3102,info,4,Temperature sensor plausible again,,,ECU
+LH-A-042,2026-05-14T07:45:10Z,e0012,Powertrain,PT_1002,info,4,Ignition OFF,,,ECU
