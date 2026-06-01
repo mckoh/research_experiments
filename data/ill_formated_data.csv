@@ -1,0 +1,5 @@
+column_0,column_1,column_2,column_3
+test,1,True,?
+test,0,False,1
+test,False,1
+test,1,True,2
